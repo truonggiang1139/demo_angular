@@ -1,0 +1,27 @@
+<div class="container">
+  <button class="btn-add" (click)="addStudent()">Add Student</button>
+  <table id="customers" style="border-collapse: collapse">
+    <tr>
+      <th>Action</th>
+      <th>Id</th>
+      <th>Student Code</th>
+      <th>Gender</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>
+        <span class="action">Clear</span>
+        &nbsp;
+        <span class="action">Edit</span>
+      </td>
+      <td>{{ student?.id }}</td>
+      <td>{{ student?.code }}</td>
+      <td>{{ student?.gender }}</td>
+      <td>{{ student?.firstName }}</td>
+      <td>{{ student?.lastName }}</td>
+      <td>{{ student?.email }}</td>
+    </tr>
+  </table>
+</div>

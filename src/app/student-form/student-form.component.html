@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Nhập thêm 1 sinh viên mới</h1>
+  <form [formGroup]="studentForm">
+    <div class="form-header">
+      <label>Student Code</label>
+      <input matInput placeholder="" formControlName="code" require />
+    </div>
+    <div class="form-header">
+      <label>Gender</label>
+      <input matInput placeholder="" formControlName="gender" require />
+    </div>
+    <div class="form-header">
+      <label>First Name</label>
+      <input matInput placeholder="" formControlName="firstName" require />
+    </div>
+    <div class="form-header">
+      <label>Last Name</label>
+      <input matInput placeholder="" formControlName="label" require />
+    </div>
+    <div class="form-header">
+      <label>Email</label>
+      <input matInput placeholder="" formControlName="email" require />
+    </div>
+    <button
+      type="submit"
+      [ngClass]="{
+        btn_disable: !studentForm.valid,
+        btn_success: studentForm.valid
+      }"
+      (click)="saveStudentForm()"
+    >
+      Add Student
+    </button>
+  </form>
+</div>
