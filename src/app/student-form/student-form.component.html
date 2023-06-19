@@ -1,33 +1,30 @@
 <div class="container">
   <h1>Nhập thêm 1 sinh viên mới</h1>
-  <form [formGroup]="studentForm">
+  <form [formGroup]="studentForm" (ngSubmit)="saveStudentForm()">
     <div class="form-header">
       <label>Student Code</label>
-      <input matInput placeholder="" formControlName="code" require />
+      <input matInput placeholder="" formControlName="code" required />
     </div>
     <div class="form-header">
       <label>Gender</label>
-      <input matInput placeholder="" formControlName="gender" require />
+      <input matInput placeholder="" formControlName="gender" required />
     </div>
     <div class="form-header">
       <label>First Name</label>
-      <input matInput placeholder="" formControlName="firstName" require />
+      <input matInput placeholder="" formControlName="firstName" required />
     </div>
     <div class="form-header">
       <label>Last Name</label>
-      <input matInput placeholder="" formControlName="label" require />
+      <input matInput placeholder="" formControlName="lastName" required />
     </div>
     <div class="form-header">
       <label>Email</label>
-      <input matInput placeholder="" formControlName="email" require />
+      <input matInput placeholder="" formControlName="email" required />
     </div>
     <button
       type="submit"
-      [ngClass]="{
-        btn_disable: !studentForm.valid,
-        btn_success: studentForm.valid
-      }"
-      (click)="saveStudentForm()"
+      class="btn btn-success"
+      [disabled]="!studentForm.valid"
     >
       Add Student
     </button>

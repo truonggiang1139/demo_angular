@@ -17,7 +17,6 @@ export class StudentFormComponent implements OnInit {
     gender: new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl(''),
-    dob: new FormControl(''),
     email: new FormControl(''),
   });
   constructor(
