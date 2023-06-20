@@ -10,9 +10,10 @@
       <th>Last Name</th>
       <th>Email</th>
     </tr>
+    <i class="bi bi-trash-fill"></i>
     <tr *ngFor="let student of students">
       <td>
-        <span class="action" (click)="deleteStudent(student.id)">Clear</span>
+        <button class="action" (click)="deleteStudent(student.id)"></button>
         &nbsp;
         <span class="action" (click)="editStudent(student.id)">Edit</span>
       </td>

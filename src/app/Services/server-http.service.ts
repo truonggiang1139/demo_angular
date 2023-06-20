@@ -36,6 +36,13 @@ export class ServerHttpService {
     const url = `${this.REST_API_SERVER}/students/${id}`;
     return this.httpClient.delete<any>(url).pipe(catchError(this.handleError));
   }
+
+  //Product
+
+  public getProductList(){
+    const url=`${this.REST_API_SERVER}/productList`
+    return this.httpClient.get<any>(url).pipe(catchError(this.handleError))
+  }
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

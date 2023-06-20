@@ -1,0 +1,23 @@
+<div class="container">
+  <button class="btn-add" >Add Student</button>
+  <table id="table" style="border-collapse: collapse">
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let product of productList">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
+      <td class="action_btn ">
+        <a href="#" class="btn_edit">Edit</a>
+        <a href="#" class="btn_add">Delete</a>
+      </td>
+    </tr>
+
+  </table>
+</div>

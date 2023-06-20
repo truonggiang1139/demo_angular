@@ -10,8 +10,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentFormComponent } from './student-form/student-form.component';
+import { ProductListComponent } from './product-list/product-list.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, StudentsComponent, StudentFormComponent],
+  declarations: [AppComponent, HomeComponent, StudentsComponent, StudentFormComponent, ProductListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
