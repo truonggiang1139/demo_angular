@@ -12,7 +12,7 @@
     </tr>
     <tr *ngFor="let student of students">
       <td>
-        <span class="action">Clear</span>
+        <span class="action" (click)="deleteStudent(student.id)">Clear</span>
         &nbsp;
         <span class="action">Edit</span>
       </td>

@@ -12,7 +12,6 @@ export class ServerHttpService {
 
   public getStudents() {
     const url = `${this.REST_API_SERVER}/students`;
-    console.log(url);
     return this.httpClient.get<any>(url).pipe(catchError(this.handleError));
   }
   public addStudent(data: studentType) {
@@ -20,6 +19,10 @@ export class ServerHttpService {
     return this.httpClient
       .post<any>(url, data)
       .pipe(catchError(this.handleError));
+  }
+  public deleteStudent(id: string) {
+    const url = `${this.REST_API_SERVER}/students/${id}`;
+    return this.httpClient.delete<any>(url).pipe(catchError(this.handleError));
   }
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
