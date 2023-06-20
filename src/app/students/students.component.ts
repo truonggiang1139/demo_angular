@@ -33,4 +33,7 @@ export class StudentsComponent implements OnInit {
       this.getStudent();
     });
   }
+  public editStudent(id:string){
+    this.router.navigate(['student-form',id])
+  }
 }

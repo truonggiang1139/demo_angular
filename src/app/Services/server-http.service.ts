@@ -14,10 +14,22 @@ export class ServerHttpService {
     const url = `${this.REST_API_SERVER}/students`;
     return this.httpClient.get<any>(url).pipe(catchError(this.handleError));
   }
+
+  public getStudent(id:string) {
+    const url = `${this.REST_API_SERVER}/students/${id}`;
+    return this.httpClient.get<any>(url).pipe(catchError(this.handleError));
+  }
+
   public addStudent(data: studentType) {
     const url = `${this.REST_API_SERVER}/students`;
     return this.httpClient
       .post<any>(url, data)
+      .pipe(catchError(this.handleError));
+  }
+  public editStudent(data: studentType,id:string) {
+    const url = `${this.REST_API_SERVER}/students/${id}`;
+    return this.httpClient
+      .put<any>(url, data)
       .pipe(catchError(this.handleError));
   }
   public deleteStudent(id: string) {

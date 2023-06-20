@@ -23,10 +23,19 @@
     </div>
     <button
       type="submit"
+      *ngIf="id===null"
       class="btn btn-success"
       [disabled]="!studentForm.valid"
     >
       Add Student
+    </button>
+    <button
+      type="submit"
+      *ngIf="id"
+      class="btn btn-success"
+      [disabled]="!studentForm.valid"
+    >
+      Edit Student
     </button>
   </form>
 </div>
