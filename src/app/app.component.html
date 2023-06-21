@@ -7,12 +7,12 @@
     width: 100px;
   "
 >
-  <a [routerLink]="['']" routerLinkActive="router-link-active">Home</a>
+  <a [routerLink]="['']">Home</a>
   &nbsp;|
-  <a [routerLink]="['students']" routerLinkActive="router-link-active"
-    >Students</a
-  >
+  <a [routerLink]="['students']">Customers</a>
   &nbsp;|
-  <a [routerLink]="['/productList']" routerLinkActive="router-link-active" >Products</a>
+  <a [routerLink]="['/productList']">Products</a>
+  &nbsp;|
+  <a [routerLink]="['/orders']">Orders</a>
 </div>
 <router-outlet></router-outlet>

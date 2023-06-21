@@ -7,7 +7,6 @@ import { CommonService } from '../Services/common.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public courses = ['React', 'Angular', 'Nextjs'];
   public age;
   constructor(private common: CommonService) {
     this.age = common.age;

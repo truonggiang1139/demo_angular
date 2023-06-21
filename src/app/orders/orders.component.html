@@ -1,0 +1,27 @@
+<div class="container">
+  <button class="btn-add" (click)="addNewOrder()">Add New Order</button>
+  <table id="table" style="border-collapse: collapse">
+    <tr>
+      <th>Order ID</th>
+      <th>Customer ID</th>
+      <th>Number of products</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td>{{ order.customerID }}</td>
+      <td>{{ order.product.length }}</td>
+      <td>{{ order.total | number }}</td>
+      <td class="action_btn">
+        <a
+          [routerLink]="['/orders/order-form', order.id]"
+          routerLinkActive="router-link-active"
+          class="btn_edit"
+          >View Detail</a
+        >
+        <a (click)="deleteOrder(order.id)" class="btn_delete">Delete</a>
+      </td>
+    </tr>
+  </table>
+</div>

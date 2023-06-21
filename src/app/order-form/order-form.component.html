@@ -1,0 +1,41 @@
+<div class="container">
+  <select [(ngModel)]="selectedCustomer" style="width: 200px">
+    <option value="" hidden>Choose Customer</option>
+    <option *ngFor="let customer of customerList" [value]="customer.id">
+      {{ customer.firstName + " " + customer.lastName }}
+    </option>
+  </select>
+  <table id="table" style="border-collapse: collapse">
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Action</th>
+      <th>Total</th>
+    </tr>
+    <tr *ngFor="let product of productList">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | number }}</td>
+      <td class="action_btn">
+        <button (click)="decreaseQuantity(product.id)">-</button>
+        <input
+          type="number"
+          min="0"
+          [(ngModel)]="product.quantity"
+          (ngModelChange)="onQuantityChange(product.id)"
+        />
+        <button (click)="increaseQuantity(product.id)">+</button>
+      </td>
+      <td>{{ product.total | number }}</td>
+    </tr>
+  </table>
+  <div class="total">Total Order:{{ getTotalOrder() | number }}</div>
+  <button
+    class="btn_add btn btn-success"
+    (click)="submitOrder()"
+    [disabled]="!selectedCustomer || !getTotalOrder()"
+  >
+    {{ id ? "Edit Order" : "Add Order" }}
+  </button>
+</div>

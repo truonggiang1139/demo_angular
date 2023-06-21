@@ -1,28 +1,32 @@
 <div class="container">
-  <button class="btn-add" (click)="addStudent()">Add Student</button>
+  <button class="btn-add" (click)="addStudent()">Add Customer</button>
   <table id="customers" style="border-collapse: collapse">
     <tr>
-      <th>Action</th>
       <th>Id</th>
-      <th>Student Code</th>
+      <th>Customer Code</th>
       <th>Gender</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
+      <th>Action</th>
     </tr>
     <i class="bi bi-trash-fill"></i>
     <tr *ngFor="let student of students">
-      <td>
-        <button class="action" (click)="deleteStudent(student.id)"></button>
-        &nbsp;
-        <span class="action" (click)="editStudent(student.id)">Edit</span>
-      </td>
       <td>{{ student?.id }}</td>
       <td>{{ student?.code }}</td>
       <td>{{ student?.gender }}</td>
       <td>{{ student?.firstName }}</td>
       <td>{{ student?.lastName }}</td>
       <td>{{ student?.email }}</td>
+      <td class="action_btn">
+        <a
+          [routerLink]="['/student-form/', student.id]"
+          routerLinkActive="router-link-active"
+          class="btn_edit"
+          >Edit</a
+        >
+        <a href="#" class="btn_delete">Delete</a>
+      </td>
     </tr>
   </table>
 </div>

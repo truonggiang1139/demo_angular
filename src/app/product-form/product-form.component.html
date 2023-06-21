@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 *ngIf="!id">Add Product</h1>
+  <h1 *ngIf="id">Edit Product</h1>
+  <form [formGroup]="productForm" (ngSubmit)="saveProductForm()">
+    <div class="form-header">
+      <label>Product Name</label>
+      <input matInput placeholder="" formControlName="name" required />
+    </div>
+    <div class="form-header">
+      <label>Price</label>
+      <input matInput placeholder="" formControlName="price" required />
+    </div>
+    <div class="form-header">
+      <label>Quantity</label>
+      <input matInput placeholder="" formControlName="quantity" required />
+    </div>
+
+    <button
+      type="submit"
+      *ngIf="id === null"
+      class="btn btn-success"
+      [disabled]="!productForm.valid"
+    >
+      Add Product
+    </button>
+    <button
+      type="submit"
+      *ngIf="id"
+      class="btn btn-success"
+      [disabled]="!productForm.valid"
+    >
+      Edit Product
+    </button>
+  </form>
+</div>

@@ -1,8 +1,9 @@
 <div class="container">
-  <h1>Nhập thêm 1 sinh viên mới</h1>
+  <h1 *ngIf="!id">Add New Customer</h1>
+  <h1 *ngIf="id">Edit Customer</h1>
   <form [formGroup]="studentForm" (ngSubmit)="saveStudentForm()">
     <div class="form-header">
-      <label>Student Code</label>
+      <label>Customer Code</label>
       <input matInput placeholder="" formControlName="code" required />
     </div>
     <div class="form-header">
@@ -23,11 +24,11 @@
     </div>
     <button
       type="submit"
-      *ngIf="id===null"
+      *ngIf="id === null"
       class="btn btn-success"
       [disabled]="!studentForm.valid"
     >
-      Add Student
+      Add Customer
     </button>
     <button
       type="submit"
@@ -35,7 +36,7 @@
       class="btn btn-success"
       [disabled]="!studentForm.valid"
     >
-      Edit Student
+      Edit Customer
     </button>
   </form>
 </div>

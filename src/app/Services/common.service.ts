@@ -8,6 +8,5 @@ export class CommonService {
   constructor() {}
   public increaseAge() {
     this.age++;
-    console.log(this.age);
   }
 }
